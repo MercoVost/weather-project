@@ -171,7 +171,7 @@ function App() {
   const submitButton = () => {
     if (city) {
       axios
-        .get(BASE_URL(city))
+        .get(BASE_URL(city.trimStart().trimEnd().replace(/\s+/g, "-")))
         .then((response) => {
           setWeatherData(response.data);
           setError(""); // Сбрасываем ошибку при успешном запросе
