@@ -186,6 +186,9 @@ function App() {
     }
   };
 
+  const iconUrl = weatherData
+    ? `https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
+    : null;
   return (
     <>
       <div style={{ padding: "20px" }}>
@@ -193,7 +196,7 @@ function App() {
         <input
           type="text"
           placeholder="Введите город"
-          value={city.replace(/\s+/g, "")}
+          value={city}
           onChange={(e) => setCity(e.target.value)}
         />
         <button onClick={submitButton}>Получить погоду</button>
@@ -201,6 +204,7 @@ function App() {
         {weatherData && (
           <div>
             <h2>{weatherData.name}</h2>
+            {iconUrl && <img src={iconUrl} />}
             <p>Температура: {weatherData.main.temp}°C</p>
             <p>Состояние: {weatherData.weather[0].description}</p>
             <p>Влажность: {weatherData.main.humidity}%</p>

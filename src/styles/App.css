@@ -30,7 +30,7 @@ input[type="text"] {
 }
 
 button {
-  width: 50%;
+  width: 40%;
   padding: 10px;
   background-color: #007bff;
   color: white;
@@ -49,4 +49,13 @@ button:hover {
 
 .weather-info {
   margin-top: 20px;
+}
+
+img {
+ 
+  width: 100px;
+  height: 100px;
+  background-color: rgb(125, 192, 255);
+  border: 2px rgb(50, 170, 240) solid;
+  border-radius: 4px
 }
