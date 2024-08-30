@@ -193,7 +193,7 @@ function App() {
         <input
           type="text"
           placeholder="Введите город"
-          value={city}
+          value={city.replace(/\s+/g, "")}
           onChange={(e) => setCity(e.target.value)}
         />
         <button onClick={submitButton}>Получить погоду</button>
