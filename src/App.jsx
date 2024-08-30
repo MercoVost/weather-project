@@ -204,9 +204,11 @@ function App() {
         {weatherData && (
           <div>
             <h2>{weatherData.name}</h2>
-            {iconUrl && <img src={iconUrl} />}
+            <div className="infoImg">
+              <img src={iconUrl} />
+              <p className="info">{weatherData.weather[0].description}</p>
+            </div>
             <p>Температура: {weatherData.main.temp}°C</p>
-            <p>Состояние: {weatherData.weather[0].description}</p>
             <p>Влажность: {weatherData.main.humidity}%</p>
             <p>Скорость ветра: {weatherData.wind.speed} m/c</p>
           </div>
